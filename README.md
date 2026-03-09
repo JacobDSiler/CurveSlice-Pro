@@ -1,6 +1,4 @@
-This is my curve cutting addon for blender copyright 2024
+This is CurveSlice Pro 2.0
 
-This will be a contribution to the Blender community. Please feel free to download, install as an addon, and try it out during this open testing phase.
-Also, please comment your favorite name on the youtube video.
-
-[https://youtu.be/-HsV61qRoKo](url)
+It's a ZBrush style trim and slice add-on for Blender.
+Use it for awesome art!
