@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CurveSlice Pro — Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#e4e4e7;line-height:1.7}a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline}.container{max-width:860px;margin:0 auto;padding:60px 24px 100px}.back-link{display:inline-block;margin-bottom:40px;color:#71717a;font-size:14px}.back-link:hover{color:#60a5fa}h1{font-size:36px;font-weight:700;color:#fafafa;margin-bottom:8px}.subtitle{color:#71717a;font-size:16px;margin-bottom:48px}h2{font-size:24px;font-weight:700;color:#fafafa;margin-top:56px;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid #27272a}h3{font-size:18px;font-weight:600;color:#d4d4d8;margin-top:32px;margin-bottom:12px}p{margin-bottom:16px;color:#a1a1aa}p strong{color:#e4e4e7}ul,ol{margin-bottom:16px;padding-left:24px;color:#a1a1aa}li{margin-bottom:8px}.shortcut-grid{display:grid;grid-template-columns:160px 1fr;gap:4px 20px;margin:16px 0 24px}.shortcut-grid .key{font-family:'JetBrains Mono',monospace;font-size:13px;color:#60a5fa;background:#1a1a2e;padding:4px 10px;border-radius:6px;text-align:center;border:1px solid #2d2d4a}.shortcut-grid .desc{color:#a1a1aa;padding:4px 0;font-size:14px}code,kbd{font-family:'JetBrains Mono',monospace;font-size:13px;background:#1a1a2e;padding:2px 8px;border-radius:4px;color:#60a5fa;border:1px solid #2d2d4a}.tip{background:#0f2a1f;border-left:3px solid #22c55e;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;color:#86efac;font-size:14px}.tip strong{color:#22c55e}.warning{background:#2a1f0f;border-left:3px solid #f59e0b;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;color:#fcd34d;font-size:14px}.mode-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:16px 0}.mode-card{background:#111118;border:1px solid #27272a;border-radius:12px;padding:20px}.mode-card h4{color:#fafafa;font-size:16px;margin-bottom:8px}.mode-card p{font-size:14px;margin-bottom:0}.tier-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}.tier-table th{background:#1a1a2e;color:#fafafa;padding:12px 16px;text-align:left;border-bottom:2px solid #3b82f6}.tier-table td{padding:10px 16px;border-bottom:1px solid #1e1e2a;color:#a1a1aa}.tier-table tr:hover td{background:#111118}.tier-table .check{color:#22c55e}.tier-table .lock{color:#52525b}.steps{counter-reset:step;list-style:none;padding-left:0}.steps li{counter-increment:step;padding-left:40px;position:relative;margin-bottom:16px}.steps li::before{content:counter(step);position:absolute;left:0;width:28px;height:28px;background:#3b82f6;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}.toc{background:#111118;border:1px solid #27272a;border-radius:12px;padding:24px 32px;margin-bottom:40px}.toc h3{margin-top:0;color:#fafafa}.toc ul{list-style:none;padding:0;columns:2}.toc li{margin-bottom:6px}.toc a{color:#71717a;font-size:14px}.toc a:hover{color:#60a5fa}@media(max-width:640px){.shortcut-grid{grid-template-columns:1fr}.toc ul{columns:1}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="https://curveslice.jacobsiler.com" class="back-link">← Back to CurveSlice Pro</a>
+<h1>CurveSlice Pro Documentation</h1>
+<p class="subtitle">Version 2.0 — Interactive curve cutting for Blender 4.0+</p>
+<div class="toc"><h3>Contents</h3><ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#first-cut">Your First Cut</a></li>
+<li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+<li><a href="#cut-modes">Cut Modes</a></li>
+<li><a href="#curves">Curve Types</a></li>
+<li><a href="#closed-loops">Closed Loop Cuts</a></li>
+<li><a href="#settings">Cut Settings</a></li>
+<li><a href="#remesh">Remeshing</a></li>
+<li><a href="#modes">Edit &amp; Sculpt Mode</a></li>
+<li><a href="#post-cut">Post-Cut Options</a></li>
+<li><a href="#licensing">Licensing</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#support">Support</a></li>
+</ul></div>
+
+<h2 id="getting-started">Getting Started</h2>
+<h3>Installation</h3>
+<ol class="steps">
+<li>Download <code>curveslice_pro.zip</code> from <a href="https://github.com/JacobDSiler/CurveSlice-Pro/releases">GitHub</a> or Blender Market</li>
+<li>In Blender: <strong>Edit → Preferences → Add-ons → Install</strong></li>
+<li>Select the zip file and click <strong>Install Add-on</strong></li>
+<li>Enable CurveSlice Pro by checking the checkbox</li>
+<li>The CurveSlice panel appears in the 3D Viewport sidebar (press <kbd>N</kbd>)</li>
+</ol>
+<div class="tip"><strong>Requirements:</strong> Blender 4.0 or later. Windows, macOS, or Linux.</div>
+
+<h2 id="first-cut">Your First Cut</h2>
+<ol class="steps">
+<li>Add or select a mesh object in your scene</li>
+<li>In the CurveSlice panel, set your mesh as the <strong>Cut Target</strong></li>
+<li>Click <strong>Draw Cut Curve</strong> or press <kbd>Ctrl+Shift+X</kbd></li>
+<li>Click to place points across your mesh — a red overlay shows what will be removed</li>
+<li>Press <kbd>Enter</kbd> to cut</li>
+</ol>
+<p>That's it. The mesh is trimmed along your curve.</p>
+
+<h2 id="shortcuts">Keyboard Shortcuts</h2>
+<div class="shortcut-grid">
+<span class="key">Ctrl+Shift+X</span><span class="desc">Start the draw tool</span>
+<span class="key">Left Click</span><span class="desc">Place a point</span>
+<span class="key">Alt</span><span class="desc">Toggle between Straight and Bezier segments</span>
+<span class="key">F</span><span class="desc">Flip which side gets removed</span>
+<span class="key">Shift (hold)</span><span class="desc">Constrain to 45° angles</span>
+<span class="key">Backspace</span><span class="desc">Undo the last placed point</span>
+<span class="key">Enter</span><span class="desc">Confirm and execute the cut</span>
+<span class="key">Double-click</span><span class="desc">Confirm and execute the cut</span>
+<span class="key">Escape</span><span class="desc">Cancel drawing</span>
+<span class="key">Right-click</span><span class="desc">Cancel drawing</span>
+</div>
+
+<h2 id="cut-modes">Cut Modes</h2>
+<p>Select your cut mode from the buttons in the panel before drawing.</p>
+<div class="mode-cards">
+<div class="mode-card"><h4>Trim</h4><p>Removes geometry on one side of your curve. The red overlay shows which side will be removed. Press <kbd>F</kbd> to flip sides. This is the default and most commonly used mode.</p></div>
+<div class="mode-card"><h4>Slice</h4><p>Splits the mesh into two separate objects along the curve. Both pieces are kept as independent objects. Works with open curves and closed loops.</p></div>
+<div class="mode-card"><h4>Intersect</h4><p>Keeps only the geometry on one side of the curve and removes everything else. Useful for extracting specific regions from a mesh.</p></div>
+</div>
+
+<h2 id="curves">Curve Types</h2>
+<h3>Straight Segments</h3>
+<p>The default. Each click places a point connected by a straight line to the previous point. Fast and precise for hard-surface cuts.</p>
+<h3>Bezier Segments</h3>
+<p>Press <kbd>Alt</kbd> while drawing to toggle to Bezier mode. Points are connected by smooth curves with automatically computed handles. The preview shows the exact curve shape in real-time — <strong>what you see is what you cut</strong>.</p>
+<p>All Bezier handles update dynamically as you move your mouse, including when closing a loop. The final cut matches the preview exactly.</p>
+<div class="tip"><strong>Tip:</strong> You can mix straight and Bezier segments freely in the same curve. The segment type applies to the next segment you draw.</div>
+
+<h2 id="closed-loops">Closed Loop Cuts</h2>
+<p>Closed loops let you punch holes, extract regions, or slice shapes out of your mesh.</p>
+<ol class="steps">
+<li>Place at least 3 points</li>
+<li>Move your mouse near the first point — a green dot appears when you're close enough</li>
+<li>Click to close the loop and execute the cut</li>
+</ol>
+<p>When hovering near the close point, the entire curve preview recalculates to show the true cyclic shape — all Bezier handles update to reflect the closed loop.</p>
+<p>Closed loops work differently depending on your cut mode and the <strong>Flip Cut Side</strong> setting:</p>
+<ul>
+<li><strong>Trim (inward):</strong> Punches a hole in the mesh. The red fill shows the interior being removed.</li>
+<li><strong>Trim (outward):</strong> Keeps only the interior. The red fill shows everything outside being removed.</li>
+<li><strong>Slice:</strong> Creates two separate objects — the interior piece and the exterior piece.</li>
+<li><strong>Intersect:</strong> Keeps only the geometry inside the loop.</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Press <kbd>F</kbd> while drawing to flip between inward and outward modes. The red visualization updates instantly.</div>
+
+<h2 id="settings">Cut Settings</h2>
+<h3>Cut Through</h3>
+<p>Enabled by default. The cut extends fully through the mesh regardless of its thickness. This is what you want for most cuts.</p>
+<h3>Custom Depth</h3>
+<p>Disable <strong>Cut Through</strong> to reveal depth controls for partial cuts:</p>
+<ul>
+<li><strong>Depth:</strong> How far the cutting wall extends through the object along the view direction</li>
+<li><strong>Depth Offset:</strong> Shifts the starting point of the cut forward or back along the view direction</li>
+</ul>
+<h3>Flip Cut Side</h3>
+<p>Toggles which side of the curve is removed. You can click the button in the panel or press <kbd>F</kbd> during drawing. The red overlay updates in real-time so you always see what will be removed before committing.</p>
+
+<h2 id="remesh">Remeshing</h2>
+<p><em>Requires Indie or Pro license. All remesh features are available during the 7-day free trial.</em></p>
+<p>Boolean cuts can create messy topology. CurveSlice Pro includes built-in remeshing to automatically clean up your mesh after every cut.</p>
+<p>Enable <strong>Remesh After Cut</strong> in the Remesh panel, then choose your method:</p>
+<div class="mode-cards">
+<div class="mode-card"><h4>Voxel <span style="color:#60a5fa;font-size:12px">Indie+</span></h4><p>Fast uniform remesh. Adjust the <strong>Voxel Size</strong> slider — smaller values give more detail, larger values give smoother results.</p></div>
+<div class="mode-card"><h4>QuadriFlow <span style="color:#a78bfa;font-size:12px">Pro</span></h4><p>Intelligent quad-based remesh that preserves shape and features. Choose <strong>Ratio</strong> mode (percentage of original faces) or <strong>Faces</strong> mode (exact target count).</p></div>
+<div class="mode-card"><h4>QuadRemesher <span style="color:#a78bfa;font-size:12px">Pro</span></h4><p>Integration with the QuadRemesher addon (installed separately). Runs asynchronously and auto-detects the new object when finished.</p></div>
+</div>
+<div class="tip"><strong>Tip:</strong> Press <kbd>R</kbd> in Sculpt Mode to preview the voxel grid on your mesh before remeshing.</div>
+<h3>QuadriFlow Settings</h3>
+<ul>
+<li><strong>Ratio / Faces:</strong> Target the remesh by ratio of original faces or an exact face count</li>
+<li><strong>Use Mesh Symmetry:</strong> Preserve symmetry during remeshing</li>
+<li><strong>Preserve Sharp:</strong> Keep sharp edges intact</li>
+<li><strong>Preserve Mesh Boundary:</strong> Don't move boundary edges</li>
+<li><strong>Preserve Paint Mask:</strong> Maintain sculpt paint masks</li>
+<li><strong>Smooth Normals:</strong> Smooth normals after remeshing</li>
+<li><strong>Seed:</strong> Random seed for reproducible results</li>
+</ul>
+<h3>Mesh Statistics</h3>
+<p>The Remesh panel shows the active mesh's <strong>face count</strong> and <strong>vertex count</strong>. Quick-toggle buttons for viewport <strong>Statistics</strong> and <strong>Face Orientation</strong> overlays are provided so you don't need to hunt through Blender's overlay menus.</p>
+<p>Use the <strong>Remesh Now</strong> button to remesh at any time without performing a cut.</p>
+
+<h2 id="modes">Edit &amp; Sculpt Mode</h2>
+<p><strong>Edit Mode</strong> <em>(Indie+):</em> Start the draw tool while in Edit Mode. CurveSlice handles all mode transitions automatically — you draw, cut, and return to Edit Mode seamlessly.</p>
+<p><strong>Sculpt Mode</strong> <em>(Pro):</em> Start the draw tool while sculpting. After the cut completes, you're returned to Sculpt Mode automatically. This is ideal for iterative sculpt-and-cut workflows similar to ZBrush's trim brushes.</p>
+
+<h2 id="post-cut">Post-Cut Options</h2>
+<ul>
+<li><strong>Keep Curve:</strong> When enabled, the projected curve mesh is retained in the scene after cutting. Useful for reference or further editing.</li>
+<li><strong>Apply Cut Materials:</strong> Colors the cut surfaces with random materials so you can easily identify which faces were created by the boolean operation.</li>
+</ul>
+
+<h2 id="licensing">Licensing</h2>
+<h3>Free Trial</h3>
+<p>All features — including Edit Mode, Sculpt Mode, and all remesh options — are fully unlocked for <strong>7 days</strong> after first install. This lets you evaluate everything before purchasing.</p>
+<p>After the trial, the free tier allows <strong>3 cuts per day</strong> with basic features (Trim, Slice, Intersect, Bezier curves, closed loops, and live preview).</p>
+<div class="warning">The trial is tracked server-side by device fingerprint and cannot be reset by reinstalling the addon.</div>
+<h3>Activating a License</h3>
+<ol class="steps">
+<li>Purchase a license at <a href="https://curveslice.jacobsiler.com">curveslice.jacobsiler.com</a></li>
+<li>You'll receive a license key by email</li>
+<li>In Blender, open the CurveSlice panel → <strong>License</strong> section</li>
+<li>Paste your key and click <strong>Activate License</strong></li>
+</ol>
+<h3>License Tiers</h3>
+<table class="tier-table">
+<tr><th>Feature</th><th>Free</th><th>Indie</th><th>Pro</th></tr>
+<tr><td>Cuts per day</td><td>3 (after trial)</td><td>Unlimited</td><td>Unlimited</td></tr>
+<tr><td>Trim / Slice / Intersect</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Bezier &amp; straight curves</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Open &amp; closed loop cuts</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Live WYSIWYG preview</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Edit Mode cutting</td><td class="lock">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Sculpt Mode cutting</td><td class="lock">—</td><td class="lock">—</td><td class="check">✓</td></tr>
+<tr><td>Voxel Remesh</td><td class="lock">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>QuadriFlow Remesh</td><td class="lock">—</td><td class="lock">—</td><td class="check">✓</td></tr>
+<tr><td>QuadRemesher Integration</td><td class="lock">—</td><td class="lock">—</td><td class="check">✓</td></tr>
+<tr><td>Device activations</td><td>1</td><td>3</td><td>5</td></tr>
+</table>
+<table class="tier-table" style="margin-top:24px">
+<tr><th>Pricing</th><th>Free</th><th>Indie</th><th>Pro</th></tr>
+<tr><td>Monthly</td><td>$0</td><td>$9/mo</td><td>$15/mo</td></tr>
+<tr><td>Yearly</td><td>$0</td><td>$69/yr</td><td>$99/yr</td></tr>
+<tr><td>Perpetual</td><td>$0</td><td>$149</td><td>$249</td></tr>
+</table>
+<h3>Deactivating</h3>
+<p>Click <strong>Deactivate License</strong> in the License panel to free up a device slot — for example, when moving to a new computer.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>"No cut target set"</h3>
+<p>Select a mesh object in the Cut Target field before drawing.</p>
+<h3>"Cut target is hidden"</h3>
+<p>Unhide the target mesh in the Outliner (click the eye icon) or press <kbd>Alt+H</kbd> in the viewport.</p>
+<h3>QuadriFlow says "Remeshing canceled"</h3>
+<p>The mesh is likely not manifold — it may have holes, loose edges, or inconsistent normals. Try running a <strong>Voxel Remesh</strong> first to make the mesh manifold, then use QuadriFlow on the clean result.</p>
+<h3>Cut produces unexpected results</h3>
+<p>Try flipping the cut side with <kbd>F</kbd> during drawing. For closed loops, check whether the red overlay shows inward or outward removal.</p>
+<h3>Boolean operation fails</h3>
+<p>Blender's Exact boolean solver requires clean geometry. Ensure the target mesh has no overlapping faces, zero-area polygons, or non-manifold edges. Running <strong>Mesh → Clean Up → Merge by Distance</strong> in Edit Mode can help.</p>
+<h3>Remesh Now button is greyed out</h3>
+<p>Make sure a mesh object is selected or set as the Cut Target.</p>
+
+<h2 id="support">Support</h2>
+<p>
+<strong>Email:</strong> <a href="mailto:dev@jacobsiler.com">dev@jacobsiler.com</a><br>
+<strong>Website:</strong> <a href="https://curveslice.jacobsiler.com">curveslice.jacobsiler.com</a><br>
+<strong>GitHub:</strong> <a href="https://github.com/JacobDSiler/CurveSlice-Pro">github.com/JacobDSiler/CurveSlice-Pro</a>
+</p>
+<p style="margin-top:48px;color:#52525b;font-size:13px;text-align:center">CurveSlice Pro v2.0 — Made by Jacob Siler</p>
+</div>
+</body>
+</html>
